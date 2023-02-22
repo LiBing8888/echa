@@ -1,0 +1,73 @@
+{
+  "name": "insurance",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "build-uat": "vue-cli-service build --mode uat"
+  },
+  "dependencies": {
+    "@types/good-storage": "^1.1.0",
+    "@types/js-cookie": "^2.2.7",
+    "@vant/area-data": "^1.1.1",
+    "amfe-flexible": "^2.2.1",
+    "ant-design-vue": "^3.2.15",
+    "axios": "^0.19.0",
+    "core-js": "^3.6.5",
+    "echarts": "^5.4.1",
+    "good-storage": "^1.1.1",
+    "js-cookie": "^2.2.1",
+    "less": "^4.1.1",
+    "less-loader": "^5.0.0",
+    "mitt": "^3.0.0",
+    "postcss-px2rem": "^0.3.0",
+    "vant": "^3.1.1",
+    "vue": "^3.2.11",
+    "vue-class-component": "^8.0.0-0",
+    "vue-router": "^4.0.10",
+    "weixin-js-sdk": "^1.6.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-typescript": "^4.5.13",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/eslint-config-typescript": "^7.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^7.0.0",
+    "html-webpack-include-assets-plugin": "^2.0.0",
+    "html-webpack-tags-plugin": "^3.0.1",
+    "typescript": "~4.1.5"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended",
+      "@vue/typescript"
+    ],
+    "parserOptions": {
+      "parser": "@typescript-eslint/parser"
+    },
+    "rules": {}
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

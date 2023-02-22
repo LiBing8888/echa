@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title>海浪监测与舰艇评估系统</title>
+  </head>
+  <body >
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <!-- <div class="canvas" style="opacity: .2">
+	<iframe frameborder="0" src="./plugin/index.html" style="width: 100%; height: 100%"></iframe>
+	</div> -->
+    <div id="app"></div>
+    <div class="oneload wrapper" >
+      <div class="rubik-loader"></div>
+    </div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
+<script type="text/javascript" src="./plugin/jquery.js"></script>
+<script>
+	$(window).load(function(){  
+            $(".oneload").fadeOut()
+            })  
+            window.oncontextmenu=function(e){
+    //取消默认的浏览器自带右键 很重要！！
+    e.preventDefault();
+}
+			
+/****/
+$(document).ready(function(){
+	var whei=$(window).width()
+	$("html").css({fontSize:whei/20})
+	$(window).resize(function(){
+		var whei=$(window).width()
+	 $("html").css({fontSize:whei/20})
+});
+	});
+	</script>
+<script>
+let lazyFun;
+function init(el, width, height) {
+    var _el = document.getElementById(el);
+    var hScale = window.innerHeight / height;
+    var wScale = window.innerWidth / width;
+    _el.style.transform = 'scale(' + wScale + ',' + hScale + ')'
+}
+init('app', 1920, 1080);
+window.onresize = function() {
+    clearTimeout(lazyFun);
+    lazyFun = setTimeout(function() {
+        init('app', 1920, 1080)
+    }, 600);
+};
+</script>
+
+<style >
+  #app{
+    width: 1920px;
+    height: 1080px;
+    transform-origin: 0 0;
+  }
+.van-overlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  opacity: .9;
+  
+}
+.rubik-loader{
+    width: 10vw;
+  height: 10vw;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url('./assets/images/loading1.gif');
+  background-repeat: no-repeat;
+  background-position: center
+  }
+  </style>
